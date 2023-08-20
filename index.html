@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Design</title>
 
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js"></script>
 
 </head>
 <body>
@@ -23,39 +25,181 @@
         </ul>  
       </nav>
     </div>
+
+    <div class="bg-gray-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+              Propose Your Solution
+            </h2>
+            <p class="mt-4 text-lg leading-6 text-gray-300">
+              We have the answer you're looking for. Explore our solution to your needs.
+            </p>
+          </div>
+          <div class="mt-10 flex justify-center">
+            <div class="rounded-md shadow">
+              <button
+                id="searchButton"
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+              >
+                Search Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- The modal for search engine -->
+      <div id="searchModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        <div class="bg-white p-8 rounded-lg shadow-md z-10">
+          <h3 class="text-lg font-semibold mb-4">Search Engine</h3>
+          <form>
+            <input
+              type="text"
+              class="w-full border rounded-md px-3 py-2"
+              placeholder="Enter your search query..."
+            />
+            <button
+              type="submit"
+              class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
+            >
+              Search
+            </button>
+          </form>
+          <button
+            id="closeModalButton"
+            class="mt-2 text-gray-600 hover:text-gray-800 focus:outline-none"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      
+      <script>
+        const searchButton = document.getElementById('searchButton');
+        const searchModal = document.getElementById('searchModal');
+        const closeModalButton = document.getElementById('closeModalButton');
+      
+        searchButton.addEventListener('click', () => {
+          searchModal.classList.remove('hidden');
+        });
+      
+        closeModalButton.addEventListener('click', () => {
+          searchModal.classList.add('hidden');
+        });
+      </script>  
   </header>
   
   <!-- Hero -->
   <section id="hero" class="bg-gray-900 py-20">
-    <div class="container mx-auto text-center">
-      <h1 class="text-3xl font-bold mb-3">Responsive Website</h1>
-      <p class="text-gray-400">Built with Tailwind CSS</p>
-    </div>
+    <div class="flex">
+        <!-- Left Side (Sticking to Grid) -->
+        <div class="flex-none w-1/2 bg-gray-200">
+          <div class="h-screen flex items-center justify-center p-8">
+            <div>
+              <h1 class="text-3xl font-bold mb-4">Welcome to Our Site</h1>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet enim et ligula ultrices tristique eu eu libero.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side (Going Beyond Grid) -->
+        <div class="flex-none w-1/2 relative">
+          <div class="absolute inset-0 bg-gray-300"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gray-500"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-white px-8 py-16">
+            <!-- Slider Content Goes Here -->
+            <p class="text-gray-600">Slide 1</p>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+  <!-- Offer -->
+  <section>
+    <div class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+              Our Offer
+            </h2>
+            <p class="mt-4 text-lg text-gray-600">
+              Explore our services and solutions tailored for your needs.
+            </p>
+          </div>
+          <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Offer Element 1 -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Service 1</h3>
+              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </a>
+            
+            <!-- Offer Element 2 -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Service 2</h3>
+              <p class="text-gray-600">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </a>
+            
+            <!-- Offer Element 3 -->
+            <a href="#" class="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">Service 3</h3>
+              <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      
   </section>
   
   <!-- Features -->
-  <section id="features" class="py-20">
+<section id="features" class="py-20">
     <div class="container mx-auto">
       <div class="flex flex-wrap -mx-4">
   
+        <!-- Feature 1 -->
         <div class="w-full md:w-1/3 px-4 mb-8">
-          <div class="p-4 bg-white rounded-lg shadow">
-            <h3 class="font-semibold text-lg mb-3">Feature 1</h3>
+          <div class="p-4 bg-white rounded-lg shadow flex flex-col items-center">
+            <div class="text-4xl text-indigo-600 mb-3">
+              <i class="fas fa-pen"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-3">Projects</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-indigo-600">
+              Find out more
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
           </div>
         </div>
   
+        <!-- Feature 2 -->
         <div class="w-full md:w-1/3 px-4 mb-8">
-          <div class="p-4 bg-white rounded-lg shadow">
-            <h3 class="font-semibold text-lg mb-3">Feature 2</h3>
+          <div class="p-4 bg-white rounded-lg shadow flex flex-col items-center">
+            <div class="text-4xl text-indigo-600 mb-3">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-3">Visualization</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-indigo-600">
+              Find out more
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
           </div>
         </div>
   
+        <!-- Feature 3 -->
         <div class="w-full md:w-1/3 px-4 mb-8">
-          <div class="p-4 bg-white rounded-lg shadow">
-            <h3 class="font-semibold text-lg mb-3">Feature 3</h3>
+          <div class="p-4 bg-white rounded-lg shadow flex flex-col items-center">
+            <div class="text-4xl text-indigo-600 mb-3">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3 class="font-semibold text-lg mb-3">Realizations</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.</p>
+            <a href="#" class="mt-4 inline-flex items-center text-indigo-600">
+              See our projects
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
           </div>
         </div>
   
@@ -63,55 +207,162 @@
     </div>
   </section>
   
-  <!-- Testimonials -->
-  <section id="testimonials" class="py-20 bg-gray-800 text-white">
+  <!-- About the company -->
+  <section id="about" class="py-20">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-semibold mb-4">Testimonials</h2>
-  
-      <div class="flex flex-wrap -mx-2">
-      
-        <div class="w-full md:w-1/2 px-2 mb-4">
-          <div class="bg-gray-900 p-6 rounded-lg">
-            <p class="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquet, nisi nisl aliquam nisl.</p>
-            <strong class ="block font-bold">John Doe</strong>
+      <div class="flex flex-wrap items-center -mx-4">
+        
+        <!-- Left Section -->
+        <div class="w-full md:w-1/2 px-4">
+          <div class="h-full relative overflow-hidden">
+            <img src="path/to/your/photo.jpg" alt="Company Photo" class="absolute inset-0 w-full h-full object-cover">
           </div>
         </div>
-  
-        <div class="w-full md:w-1/2 px-2 mb-4">
-          <div class="bg-gray-900 p-6 rounded-lg">
-            <p class="text-gray-400 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquet, nisi nisl aliquam nisl.</p>
-            <strong class="block font-bold">Jane Doe</strong>
+        
+        <!-- Right Section -->
+        <div class="w-full md:w-1/2 px-4 mt-8 md:mt-0">
+          <div class="p-4 bg-white rounded-lg shadow">
+            <h2 class="text-3xl font-extrabold mb-4">About the Company</h2>
+            <p class="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod tempor nunc eu varius.</p>
+            <a href="#" class="inline-flex items-center text-indigo-600">
+              Get to know us better
+              <i class="fas fa-chevron-right ml-2"></i>
+            </a>
           </div>
         </div>
-  
+        
       </div>
-  
     </div>
+  </section>
+  
+<!--Realization Section-->
+
+<section id="realizations" class="bg-gray-100 p-4 rounded-lg">
+    <h2 class="text-center text-lg font-bold mb-4">Realizations</h2>
+    <div class="grid grid-cols-3 gap-4">
+      <div class="image-container">
+        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
+        <a href="#" class="popup-link">View Gallery</a>
+      </div>
+      <div class="image-container">
+        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
+        <a href="#" class="popup-link">View Gallery</a>
+      </div>
+      <div class="image-container">
+        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
+        <a href="#" class="popup-link">View Gallery</a>
+      </div>
+    </div>
+    <button id="expand-button" class="mt-4 btn btn-primary">Expand</button>
+    <script>
+      const masonry = new Masonry('.grid', {
+        itemSelector: '.image-container',
+        columnWidth: 200,
+      });
+  
+      const popupLinks = document.querySelectorAll('.popup-link');
+  
+      popupLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          const image = link.querySelector('img');
+          const popup = new Popup(image);
+          popup.open();
+        });
+      });
+  
+      const expandButton = document.getElementById('expand-button');
+  
+      expandButton.addEventListener('click', () => {
+        const moreRealizations = document.querySelectorAll('.image-container:hidden');
+  
+        moreRealizations.forEach((realization) => {
+          realization.classList.remove('hidden');
+        });
+      });
+    </script>
   </section>
 
 <!-- Call to Action Section -->
-<section id="cta" class="bg-gray-900 text-white py-16 text-center relative">
+<section id="about-us" class="py-20 bg-green-800">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap items-center justify-between -mx-4">
+        
+        <!-- Left Content -->
+        <div class="w-full md:w-2/3 px-4">
+          <p class="text-white text-lg">
+            Let's Stay In Touch! You will find us on Instagram.
+          </p>
+        </div>
+        
+        <!-- Right Content -->
+        <div class="w-full md:w-1/3 px-4">
+          <div class="bg-white h-full flex justify-center items-center rounded-lg shadow p-6">
+            <p class="text-center text-lg">
+              Follow our latest projects
+            </p>
+            <a href="https://www.instagram.com/your_instagram_handle/" target="_blank" rel="noopener noreferrer" class="mt-2 bg-indigo-600 text-white py-2 px-4 rounded-lg inline-flex items-center">
+              Instagram
+            </a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
   
-  <div class="container mx-auto px-4">
-
-    <h2 class="text-3xl mb-4">Call to Action!</h2>
-
-    <p class="mb-8">Call to action description goes here.</p>
-    
-    <button class="bg-white text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 transition">
-      Take Action
-    </button>
-
-  </div>
-
-</section>
+  
+  
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-white py-8">
-
-  <div class="container mx-auto px-4">
-
-    <div class="flex flex-wrap">
-
-      <div class="w-full md:w-1/4 text-center md:text-left">
-        <h5 class="uppercase   
+<footer class="bg-black text-white py-10">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap items-top justify-between -mx-4">
+        
+        <!-- Top Left -->
+        <div class="w-full md:w-1/2 px-4">
+          <h2 class="text-lg font-bold">giarddesign</h2>
+          <p class="mt-2">Let us know what we can do for you!</p>
+          <a href="#" class="mt-2 inline-block text-green-600 hover:text-green-400 focus:outline-none">
+            Contact Us
+          </a>
+        </div>
+        
+        <!-- Top Right -->
+        <div class="w-full md:w-1/2 px-4">
+          <hr class="border-gray-600 my-6">
+          <!-- Additional content can be added here if needed -->
+        </div>
+        
+        <!-- Bottom Left -->
+        <div class="w-full md:w-1/2 px-4 mt-8 md:mt-0">
+          <div class="flex space-x-4">
+            <a href="#" class="border-0 text-indigo-600 hover:text-indigo-400 focus:outline-none">
+              Instagram
+            </a>
+            <a href="#" class="border-0 text-indigo-600 hover:text-indigo-400 focus:outline-none">
+              Facebook
+            </a>
+            <a href="#" class="border-0 text-indigo-600 hover:text-indigo-400 focus:outline-none">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        
+        <!-- Bottom Right -->
+        <div class="w-full md:w-1/2 px-4 mt-8 md:mt-0 text-right">
+          <p class="text-lg">000-000-000</p>
+          <p>giarddesign@kontakt.pl</p>
+        </div>
+        
+      </div>
+      <div class="flex flex-wrap justify-between -mx-4 mt-6">
+        <div class="w-full md:w-1/2 px-4">
+          <p class="text-gray-400">Rights reserved © 2022</p>
+        </div>
+        <div class="w-full md:w-1/2 px-4 text-right">
+          <p class="text-gray-400">made by adRespect</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
