@@ -22,82 +22,52 @@
 <body>
 
 <!-- Header -->
-<header class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="font-bold text-xl">giarddesign</a>
-      <nav>
-        <ul class="flex space-x-4">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>  
-      </nav>
+<header>
+  <nav class="bg-white-500 p-4 flex justify-between items-center">
+    <div class="flex items-center">
+      <a href="#" class="text-black text-xl font-semibold hover:underline">giarddesign</a>
     </div>
-
-    <div class="bg-gray-800 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center">
-            <p class="mt-4 text-lg leading-6 text-gray-300">
-              We have the answer you're looking for. Explore our solution to your needs.
-            </p>
-          </div>
-          <div class="mt-10 flex justify-center">
-            <div class="rounded-md shadow">
-              <button
-                id="searchButton"
-                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-              >
-                Search Now
-              </button>
-            </div>
-          </div>
+    <div class="flex items-center space-x-4">
+      <a href="#" class="text-black hover:text-blue-300">Offer</a>
+      <a href="#" class="text-black hover:text-blue-300">Home</a>
+      <a href="#" class="text-black hover:text-blue-300">Contact Us</a>
+      <a href="#" class="text-black hover:text-blue-300">About</a>
+      <button id="searchButton" class="text-black hover:text-blue-300">
+        Search
+      </button>
+    </div>
+  </nav>
+  
+  <div id="searchOverlay" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+    <div class="flex justify-center items-center h-screen">
+      <div class="bg-white p-6 rounded-lg w-96">
+        <input type="text" placeholder="Search" class="w-full px-2 py-1 border rounded focus:outline-none focus:border-blue-500">
+        <div class="flex justify-end mt-2">
+          <button id="cancelButton" class="text-gray-500 mr-2">Cancel</button>
+          <button id="searchSubmitButton" class="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600">Search</button>
         </div>
       </div>
-      
-      <!-- The modal for search engine -->
-      <div id="searchModal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
-        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-        <div class="bg-white p-8 rounded-lg shadow-md z-10">
-          <h3 class="text-lg font-semibold mb-4">Search Engine</h3>
-          <form>
-            <input
-              type="text"
-              class="w-full border rounded-md px-3 py-2"
-              placeholder="Enter your search query..."
-            />
-            <button
-              type="submit"
-              class="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700"
-            >
-              Search
-            </button>
-          </form>
-          <button
-            id="closeModalButton"
-            class="mt-2 text-gray-600 hover:text-gray-800 focus:outline-none"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-      
-      <script>
-        const searchButton = document.getElementById('searchButton');
-        const searchModal = document.getElementById('searchModal');
-        const closeModalButton = document.getElementById('closeModalButton');
-      
-        searchButton.addEventListener('click', () => {
-          searchModal.classList.remove('hidden');
-        });
-      
-        closeModalButton.addEventListener('click', () => {
-          searchModal.classList.add('hidden');
-        });
-      </script>  
+    </div>
+  </div>
+  
+  <script>
+    const searchButton = document.getElementById('searchButton');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const cancelButton = document.getElementById('cancelButton');
+  
+    searchButton.addEventListener('click', () => {
+      searchOverlay.classList.remove('hidden');
+    });
+  
+    cancelButton.addEventListener('click', () => {
+      searchOverlay.classList.add('hidden');
+    });
+  </script>
+  
   </header>
   
   <!-- Hero -->
-  <section class="px-3 py-5 bg-neutral-100 lg:py-10">
+  <section class="px-3 py-5 bg-pink-100 lg:py-10">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
       <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
         <p class="text-4xl font-bold md:text-7xl">Modern arrangement of your garden</p>
