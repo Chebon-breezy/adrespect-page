@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js"></script>
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <!-- Masonry JS -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <!-- or -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
 </head>
 <body>
 
@@ -215,7 +223,7 @@
         <!-- Left Section -->
         <div class="w-full md:w-1/2 px-4">
           <div class="h-full relative overflow-hidden">
-            <img src="path/to/your/photo.jpg" alt="Company Photo" class="absolute inset-0 w-full h-full object-cover">
+            <img src="pic/maizemaze.jpg" alt="Company Photo" class="absolute inset-0 w-full h-full object-cover">
           </div>
         </div>
         
@@ -237,50 +245,54 @@
   
 <!--Realization Section-->
 
-<section id="realizations" class="bg-gray-100 p-4 rounded-lg">
-    <h2 class="text-center text-lg font-bold mb-4">Realizations</h2>
-    <div class="grid grid-cols-3 gap-4">
-      <div class="image-container">
-        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
-        <a href="#" class="popup-link">View Gallery</a>
-      </div>
-      <div class="image-container">
-        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
-        <a href="#" class="popup-link">View Gallery</a>
-      </div>
-      <div class="image-container">
-        <img src="image.jpg" alt="Image of a realization" class="w-full h-full object-cover">
-        <a href="#" class="popup-link">View Gallery</a>
-      </div>
-    </div>
-    <button id="expand-button" class="mt-4 btn btn-primary">Expand</button>
-    <script>
-      const masonry = new Masonry('.grid', {
-        itemSelector: '.image-container',
-        columnWidth: 200,
-      });
-  
-      const popupLinks = document.querySelectorAll('.popup-link');
-  
-      popupLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          const image = link.querySelector('img');
-          const popup = new Popup(image);
-          popup.open();
-        });
-      });
-  
-      const expandButton = document.getElementById('expand-button');
-  
-      expandButton.addEventListener('click', () => {
-        const moreRealizations = document.querySelectorAll('.image-container:hidden');
-  
-        moreRealizations.forEach((realization) => {
-          realization.classList.remove('hidden');
-        });
-      });
-    </script>
-  </section>
+<section class="p-6">
+  <!-- Realizations Section Title -->
+  <h1 class="text-3xl font-bold mb-5">Realizations</h1> 
+      
+  <!-- Masonry Grid for Images using Tailwind CSS classes -->
+  <div id="masonry-grid" class="grid grid-cols-3 gap-6">
+      <!-- Image Items --> 
+      <a data-fancybox="gallery" href="/pic/maizemaze.jpg"><img src="/pic/maizemaze.jpg" alt="Image 1" class="rounded-md"></a>
+      <a data-fancybox="gallery" href="https://www.erikjo.com/work/a-taste-of-freedom"><img src="https://www.erikjo.com/work/a-taste-of-freedom" alt="Image 2" class="rounded-md"></a>
+      <!-- Additional images will be added here when "Expand" button is clicked -->
+  </div>
+
+  <!-- Expand Button -->
+  <button id="expand-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">
+      Expand
+  </button>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Fancybox JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- Masonry JS -->
+<script src="https://unpkg.com/macy@3.3.1/dist/macy.min.js"></script>
+<script>
+  // Initialize Masonry
+  var macyInstance = Macy({
+      container: '#masonry-grid',
+      trueOrder: false,
+      waitForImages: false,
+      margin: 24,
+      columns: 3,
+      breakAt: {
+          1200: 3,
+          940: 3,
+          520: 2,
+          400: 1
+      }
+  });
+
+  // On 'Expand' Button Click
+  $("#expand-btn").on('click', function() {
+      // Add more images to the masonry grid (example)
+      $('#masonry-grid').append('<a data-fancybox="gallery" href="image3_large.jpg"><img src="image3_small.jpg" alt="Image 3" class="rounded-md"></a><a data-fancybox="gallery" href="image4_large.jpg"><img src="image4_small.jpg" alt="Image 4" class="rounded-md"></a>');
+
+      // Re-calculate layout after adding images
+      macyInstance.recalculateEverything();
+  });
+</script>        
 
 <!-- Call to Action Section -->
 <section id="about-us" class="py-20 bg-green-800">
