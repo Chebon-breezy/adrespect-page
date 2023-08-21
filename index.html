@@ -24,7 +24,7 @@
 <!-- Header -->
 <header class="bg-gray-800 text-white py-4">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="font-bold text-xl">Brand</a>
+      <a href="#" class="font-bold text-xl">giarddesign</a>
       <nav>
         <ul class="flex space-x-4">
           <li><a href="#">Home</a></li>
@@ -37,9 +37,6 @@
     <div class="bg-gray-800 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center">
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
-              Propose Your Solution
-            </h2>
             <p class="mt-4 text-lg leading-6 text-gray-300">
               We have the answer you're looking for. Explore our solution to your needs.
             </p>
@@ -100,30 +97,36 @@
   </header>
   
   <!-- Hero -->
-  <section id="hero" class="bg-gray-900 py-20">
-    <div class="flex">
-        <!-- Left Side (Sticking to Grid) -->
-        <div class="flex-none w-1/2 bg-gray-200">
-          <div class="h-screen flex items-center justify-center p-8">
-            <div>
-              <h1 class="text-3xl font-bold mb-4">Welcome to Our Site</h1>
-              <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet enim et ligula ultrices tristique eu eu libero.</p>
-            </div>
+  <section class="px-3 py-5 bg-neutral-100 lg:py-10">
+    <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
+      <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
+        <p class="text-4xl font-bold md:text-7xl">Modern arrangement of your garden</p>
+        <br>
+        <p class="mt-2 text-sm md:text-lg">The GardDesign brand means many years of experience and high aesthetics of implementation. We offer a comprehensive range
+          of services with an individual approach to each project.</p>
+          <div class="rounded-md shadow flex justify-between">
+            <button
+              id="searchButton"
+              class="flex-shrink-0 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+            >
+              Contact Us
+            </button>
+            <button
+              id="projectsButton"
+              class="flex-shrink-0 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 md:py-4 md:text-lg md:px-10"
+            >
+              See our projects
+            </button>
           </div>
-        </div>
-        
-        <!-- Right Side (Going Beyond Grid) -->
-        <div class="flex-none w-1/2 relative">
-          <div class="absolute inset-0 bg-gray-300"></div>
-          <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gray-500"></div>
-          <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-white px-8 py-16">
-            <!-- Slider Content Goes Here -->
-            <p class="text-gray-600">Slide 1</p>
-          </div>
-        </div>
+           
       </div>
-      
+      <div class="order-1 lg:order-2">
+        <img class="h-80 w-80 object-cover lg:w-[500px] lg:h-[500px]" src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80" alt="">
+      </div>
+    </div>
+    
   </section>
+  
 
   <!-- Offer -->
   <section>
