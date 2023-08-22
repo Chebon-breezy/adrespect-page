@@ -6,6 +6,7 @@
     <title>Website Design</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <!-- Fancybox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
@@ -28,10 +29,10 @@
       <a href="#" class="text-black text-xl font-semibold hover:underline">giarddesign</a>
     </div>
     <div class="flex items-center space-x-4">
-      <a href="#" class="text-black hover:text-blue-300">Offer</a>
-      <a href="#" class="text-black hover:text-blue-300">Home</a>
-      <a href="#" class="text-black hover:text-blue-300">Contact Us</a>
-      <a href="#" class="text-black hover:text-blue-300">About</a>
+      <a href="#offer" class="text-black hover:text-blue-300">Offer</a>
+      <a href="#hero" class="text-black hover:text-blue-300">Home</a>
+      <a href="#about-us" class="text-black hover:text-blue-300">Contact Us</a>
+      <a href="#footer" class="text-black hover:text-blue-300">About</a>
       <button id="searchButton" class="text-black hover:text-blue-300 flex items-center gap-1">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10.2438 17.7377C14.3825 17.7377 17.7377 14.3825 17.7377 10.2438C17.7377 6.10511 14.3825 2.75 10.2438 2.75C6.10511 2.75 2.75 6.10511 2.75 10.2438C2.75 14.3825 6.10511 17.7377 10.2438 17.7377Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -70,7 +71,7 @@
   </header>
   
   <!-- Hero -->
-  <section class="px-3 py-5 bg-pink-100 lg:py-10">
+  <section class="px-3 py-5 bg-pink-100 lg:py-10" id="hero">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-5">
       <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
         <p class="text-4xl font-bold md:text-7xl">Modern arrangement of your garden</p>
@@ -103,13 +104,14 @@
   
 
   <!-- Offer -->
-  <section>
-    <div class="bg-white p-8 items-center justify-items-center">
+  <section id="offer">
+    <div class="bg-white p-8 items-center justify-items-center animate__animated animate__fadeIn">
       <h2 class="text-2xl font-semibold mb-4">We operate comprehensively</h2>
       <p class="text-gray-700">We offer a complete service for investments in green areas. We design modern and residential gardens. We will create a project for you, visualize it and implement it, and at every stage we will provide advice and many years of experience.</p>
     </div>
-      
   </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
   
   <!-- Features -->
   <section class="px-3 py-5 bg-pink-100 lg:py-10">
@@ -243,8 +245,8 @@
 <!-- Call to Action Section -->
 <section id="about-us" class="py-20">
   <div class="flex justify-center items-center h-full">
-    <div class="bg-white w-11/12 md:w-3/4 lg:w-1/2 p-8 rounded-lg shadow-lg">
-      <div class="bg-green-500 p-6 rounded-lg">
+    <div class="bg-white w-11/12 md:w-3/4 lg:w-3/4 p-8 rounded-lg shadow-lg">
+      <div class="bg-green-800 p-6 rounded-lg">
         <div class="flex justify-between items-center">
           <div class="w-1/2 pr-4">
             <p class="text-white">Let's stay in touch!<br>You will find us on Instagram.</p>
@@ -263,7 +265,7 @@
   
 
 <!-- Footer -->
-<footer class="py-8 px-4 flex flex-col items-center justify-center bg-black text-white">
+<footer class="py-8 px-4 flex flex-col items-center justify-center bg-black text-white" id="footer">
   <div class="flex justify-between w-full">
       <div class="text-left">
           <span class="text-xl font-semibold">giarddesign</span>
@@ -291,7 +293,7 @@
         <span class="text-xl font-semibold">Rights reserved © 2022</span>
     </div>
     <div class="text-right">
-        <p class="text-sm">made by adRespect</p>
+        <p class="text-xl">made by adRespect</p>
     </div>
 </div>
 </footer>
