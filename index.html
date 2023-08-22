@@ -63,10 +63,12 @@
   
     searchButton.addEventListener('click', () => {
       searchOverlay.classList.remove('hidden');
+      searchOverlay.classList.add('fixed', 'inset-0', 'z-50'); // Add Tailwind classes for positioning and z-index
     });
   
     cancelButton.addEventListener('click', () => {
       searchOverlay.classList.add('hidden');
+      searchOverlay.classList.remove('fixed', 'inset-0', 'z-50'); // Remove Tailwind classes
     });
   </script>
   
@@ -209,7 +211,7 @@
   
 <!--Realization Section-->
 
-<section class="px-3 py-5 bg-pink-100 lg:py-10">
+<section class="px-3 py-5 bg-pink-100 lg:py-10" id="project">
   <!-- Realizations Section Title -->
   <h1 class="text-3xl font-bold mb-0 text-center">Our Projects</h1> 
       
