@@ -3,3 +3,5 @@
 Developed Using HTML CSS and Tailwind CSS
 
 with Animation and scroll effects with slider of different pictures within the slide after the hero component
+
+TJ kk yr dwg he sh
